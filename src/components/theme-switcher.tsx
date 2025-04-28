@@ -20,7 +20,8 @@ export function ThemeSwitcher() {
         <motion.button
             onHoverStart={handleHoverStart}
             onHoverEnd={handleHoverEnd}
-            className='button ghost rounded-full size-fit'
+            whileTap={{ scale: 0.95, transition: { duration: 0 } }}
+            className='p-2 ghost rounded-full size-fit flex items-center gap-2'
             onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
         >
             {/* {theme === 'light' ? <Sun /> : <Moon />} */}
@@ -30,7 +31,6 @@ export function ThemeSwitcher() {
                 initial={{ width: 0 }}
                 animate={controls}
                 className='overflow-hidden'
-                transition={{ duration: 0.2, type: "spring" }}
             >
                 <h1 className='text-2xl font-bold text-primary'>Quizard</h1>
             </motion.div>

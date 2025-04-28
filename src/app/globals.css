@@ -127,6 +127,11 @@
   .ghost {
     @apply hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50
   }
+
+  .default {
+    @apply bg-primary text-primary-foreground shadow-xs hover:bg-primary/90
+  }
+
 }
 
 @layer base {
