@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from "motion/react";
 import { useTheme } from 'next-themes';
-import { Icons } from './icons/icons';
+import { Icons } from '../icons/icons';
 
 export function ThemeSwitcher() {
     const { setTheme, theme } = useTheme();
@@ -31,6 +31,7 @@ export function ThemeSwitcher() {
                 initial={{ width: 0 }}
                 animate={controls}
                 className='overflow-hidden'
+                transition={{ type: "spring", duration: 0.3 }}
             >
                 <h1 className='text-2xl font-bold text-primary'>Quizard</h1>
             </motion.div>

@@ -1,0 +1,8 @@
+{
+    "SignInForm": {
+        "trigger": "Sign In",
+        "title": "Welcome to Quizard!",
+        "description": "This is a Sign In Form:",
+        "with": "Sign in with"
+    }
+}

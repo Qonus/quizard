@@ -17,7 +17,14 @@ import {
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ReactNode, useState } from "react";
 
-export function ResponsiveDialog({ title, description, children, content }: { title?: string, description?: string, children: ReactNode, content: ReactNode }) {
+export interface ResponsiveDialogProps {
+    title?: string,
+    description?: string,
+    children?: ReactNode,
+    content: ReactNode
+}
+
+export function ResponsiveDialog({ title, description, children, content }: ResponsiveDialogProps) {
     const [open, setOpen] = useState(false);
     const isMobile = useIsMobile();
 
@@ -46,13 +53,13 @@ export function ResponsiveDialog({ title, description, children, content }: { ti
                 {children}
             </DrawerTrigger>
             <DrawerContent>
-                <DrawerHeader className="text-left">
-                    <DrawerTitle>{title}</DrawerTitle>
-                    <DrawerDescription>
-                        {description}
-                    </DrawerDescription>
-                </DrawerHeader>
-                <div className="p-5 pb-10">
+                <div className="p-5 pb-10 w-full max-w-100 m-auto">
+                    <DrawerHeader className="text-left">
+                        <DrawerTitle>{title}</DrawerTitle>
+                        <DrawerDescription>
+                            {description}
+                        </DrawerDescription>
+                    </DrawerHeader>
                     {content}
                 </div>
             </DrawerContent>

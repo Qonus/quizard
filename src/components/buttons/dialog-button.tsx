@@ -1,13 +1,11 @@
 "use client";
 
-import { Plus } from "lucide-react";
 import * as motion from "motion/react-client";
-import CreateForm from "./forms/create-form";
-import { ResponsiveDialog } from "./responsive-dialog";
+import { ResponsiveDialog, ResponsiveDialogProps } from "../responsive-dialog";
 
-export default function CreateButton() {
+export default function DialogButton({ children, ...props }: ResponsiveDialogProps) {
     return (
-        <ResponsiveDialog content={<CreateForm />}>
+        <ResponsiveDialog {...props}>
             <motion.button
                 className="p-2 default rounded-full size-fit"
                 whileHover={{
@@ -18,7 +16,7 @@ export default function CreateButton() {
                     rotate: -5
                 }}
             >
-                <Plus className="size-7 w-fit" />
+                {children}
             </motion.button>
         </ResponsiveDialog>
     );

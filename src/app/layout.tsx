@@ -1,6 +1,8 @@
 import Navbar from "@/components/navbar";
 import { ThemeProvider } from "@/components/theme-provider";
 import type { Metadata } from "next";
+import { NextIntlClientProvider } from 'next-intl';
+import { getLocale } from "next-intl/server";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -19,20 +21,25 @@ export const metadata: Metadata = {
   description: "Quizard: Your magical flashcard companion ✨🧙 ",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const locale = await getLocale();
+
   return (
-    <html lang="en">
+    <html lang={locale}>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system">
-          <Navbar />
-          {children}
-        </ThemeProvider>
+        <NextIntlClientProvider>
+
+          <ThemeProvider attribute="class" defaultTheme="system">
+            <Navbar />
+            {children}
+          </ThemeProvider>
+        </NextIntlClientProvider>
       </body>
     </html>
   );
