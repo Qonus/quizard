@@ -1,10 +1,9 @@
 import { getBaseUrl } from "@/lib/utils";
-import axios from "axios";
 import { notFound } from "next/navigation";
 
 async function getSetByID(id: string) {
-    const res = await axios.get(`${getBaseUrl()}/api/sets/${id}`);
-    return res.data;
+    const res = await fetch(`${getBaseUrl()}/api/sets/${id}`);
+    return await res.json();
 }
 
 export default async function SetPage({
