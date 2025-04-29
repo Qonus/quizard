@@ -6,5 +6,5 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getBaseUrl() {
-  return process.env.VERCEL_URL;
+  return process.env.NEXT_PUBLIC_URL || "https://" + process.env.VERCEL_APP;
 }
