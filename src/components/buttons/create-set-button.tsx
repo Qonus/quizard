@@ -1,12 +1,12 @@
 "use client";
 
 import { Plus } from "lucide-react";
-import CreateForm from "../forms/create-form";
+import EditSetForm from "../forms/create-set-form";
 import DialogButton from "./dialog-button";
 
-export default function CreateButton() {
+export default function CreateSetButton() {
     return (
-        <DialogButton content={<CreateForm />}>
+        <DialogButton content={<EditSetForm />}>
             <Plus className="size-7 w-fit z-10" />
         </DialogButton>
     );

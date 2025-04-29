@@ -4,5 +4,21 @@
         "title": "Welcome to Quizard!",
         "description": "This is a Sign In Form:",
         "with": "Sign in with"
+    },
+    "EditSetForm": {
+        "title": {
+            "placeholder": "Enter Title of the flashcard set",
+            "min": "Title is required",
+            "max": "Title can't be longer than 128 characters"
+        },
+        "description": {
+            "placeholder": "Add description",
+            "max": "Description can't be longer than 256 characters"
+        },
+        "server": "Failed to create a set, try again later..."
+    },
+    "NotFound": {
+        "title": "404 - Page not found",
+        "description": "The page you're looking for does not exist."
     }
 }

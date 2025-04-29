@@ -120,18 +120,33 @@
 }
 
 @layer components {
-  .button {
-    @apply p-2 inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] aria-invalid:ring-destructive/20 dark:aria-invalid:ring-destructive/40 aria-invalid:border-destructive
-  }
-
   .ghost {
-    @apply hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50
+    @apply rounded-full p-2 hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50
   }
 
   .default {
-    @apply bg-primary text-primary-foreground shadow-xs hover:bg-primary/90
+    @apply rounded-full p-2 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90
   }
 
+  .form {
+    @apply flex flex-col gap-7
+  }
+
+  .input {
+    @apply px-4 py-2 focus:outline-solid focus:outline-2 focus:text-foreground/70 rounded-xl outline-primary/20 outline-none bg-card focus:bg-transparent transition-all duration-200 resize-none field-sizing-content
+  }
+
+  .title {
+    @apply text-4xl font-bold
+  }
+
+  .gray {
+    @apply text-foreground/60 text-lg
+  }
+
+  .card {
+    @apply rounded-4xl bg-card p-10
+  }
 }
 
 @layer base {

@@ -6,16 +6,9 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog";
-import {
-    Drawer,
-    DrawerContent,
-    DrawerDescription,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger
-} from "@/components/ui/drawer";
 import { useIsMobile } from "@/hooks/use-mobile";
 import { ReactNode, useState } from "react";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "./ui/sheet";
 
 export interface ResponsiveDialogProps {
     title?: string,
@@ -48,21 +41,21 @@ export function ResponsiveDialog({ title, description, children, content }: Resp
     }
 
     return (
-        <Drawer open={open} onOpenChange={setOpen}>
-            <DrawerTrigger asChild>
+        <Sheet open={open} onOpenChange={setOpen}>
+            <SheetTrigger asChild>
                 {children}
-            </DrawerTrigger>
-            <DrawerContent>
+            </SheetTrigger>
+            <SheetContent side="top">
                 <div className="p-5 pb-10 w-full max-w-100 m-auto">
-                    <DrawerHeader className="text-left">
-                        <DrawerTitle>{title}</DrawerTitle>
-                        <DrawerDescription>
+                    <SheetHeader className="text-left">
+                        <SheetTitle>{title}</SheetTitle>
+                        <SheetDescription>
                             {description}
-                        </DrawerDescription>
-                    </DrawerHeader>
+                        </SheetDescription>
+                    </SheetHeader>
                     {content}
                 </div>
-            </DrawerContent>
-        </Drawer>
+            </SheetContent>
+        </Sheet>
     )
 }

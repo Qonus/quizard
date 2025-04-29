@@ -37,7 +37,9 @@ export default async function RootLayout({
 
           <ThemeProvider attribute="class" defaultTheme="system">
             <Navbar />
-            {children}
+            <div className="container">
+              {children}
+            </div>
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>
