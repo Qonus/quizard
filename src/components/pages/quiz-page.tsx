@@ -91,7 +91,7 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
                                 "p-6 px-10 hover:bg-card transition cursor-pointer border-1 border-card w-full flex",
                                 (isSubmiting || answers[current]) && (option == quiz[current].correct ? "border-green-500" : (answers[current] == option ? "border-primary" : "")))}
                             onClick={() => {
-                                if (isSubmiting) return;
+                                if (isSubmiting || answers[current]) return;
                                 setIsSubmiting(true);
                                 const newAnswers = [...answers];
                                 newAnswers[current] = option;
@@ -100,7 +100,7 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
                                     next();
                                     setIsSubmiting(false);
 
-                                }, 1000);
+                                }, 700);
                             }}
                         >
                             <p className="text-lg font-bold">{option}</p>

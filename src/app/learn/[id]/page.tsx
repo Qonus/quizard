@@ -21,7 +21,7 @@ export default async function LearnPage({
     const set = await getSetByID(id);
     if (!set || set.cards.length < 4) notFound();
 
-    const quiz = set.cards.map((card: ICard) => ({
+    const quiz = set.cards.sort(() => 0.5 - Math.random()).map((card: ICard) => ({
         front: card.front,
         correct: card.back,
         options: getShuffledOptions(set.cards, card.back)
