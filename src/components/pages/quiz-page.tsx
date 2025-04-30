@@ -6,6 +6,7 @@ import { motion } from "motion/react";
 import { useTranslations } from "next-intl";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
+import BackButton from "../buttons/back-button";
 
 interface IQuestion {
     front: string,
@@ -76,8 +77,9 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
 
     return (
         <div className="w-full">
-            <div className="sticky max-w-200 m-auto top-0 bg-background p-4 pt-20 w-full text-2xl flex">
-                <h1 className="m-auto font-bold">{t("question")} {current + 1}</h1>
+            <div className="sticky max-w-200 m-auto top-0 bg-background p-4 pt-20 w-full text-2xl flex gap-5 items-center">
+                <BackButton />
+                <h1 className="font-bold">{t("question")} {current + 1}</h1>
             </div>
             {/* {answers.map((ans, i) => <p key={i}>{i} {ans}</p>)} */}
             <div className="flex flex-col gap-10 p-5">
