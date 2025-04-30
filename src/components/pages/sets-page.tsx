@@ -16,7 +16,7 @@ export default async function SetsPage() {
     if (!sets) notFound();
 
     return (
-        <div className="p-4 flex flex-col gap-5">
+        <div className="p-4 flex flex-col gap-5 max-w-200 m-auto">
             <h1 className="title">{t("sets")}</h1>
             <Tabs defaultValue="public" className="w-full">
                 <TabsList className="w-full h-13 bg-background">

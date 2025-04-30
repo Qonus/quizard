@@ -8,7 +8,9 @@
     "SetPage": {
         "cards": "Cards in this set",
         "learn": "Learn",
-        "min": "You need at least 4 cards to learn"
+        "min": "You need at least 4 cards to learn",
+        "public": "Public",
+        "private": "Private"
     },
     "LearnPage": {
         "question": "Question number",

@@ -23,6 +23,7 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
     const router = useRouter();
 
     const next = () => {
+        if (isSubmiting) return;
         if (current + 1 >= quiz.length) {
             setShowResults(true);
         } else {
@@ -31,6 +32,7 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
     };
 
     const prev = () => {
+        if (isSubmiting) return;
         if (current > 0) setCurrent(current - 1);
     };
 

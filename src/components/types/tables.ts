@@ -5,6 +5,7 @@ export interface ISet {
     id: string,
     title: string,
     description: string | undefined,
+    createdAt: Date,
     isPublic: boolean,
     user: IUser,
     cards: ICard[] | number

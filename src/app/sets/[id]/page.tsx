@@ -1,8 +1,10 @@
 import LearnButton from "@/components/buttons/learn-button";
 import { ICard } from "@/components/types/tables";
 import { auth } from "@/lib/auth";
+import { formatRelativeTime } from "@/lib/utils";
 import { Edit, Trash } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import { deleteSet, getSetByID } from "../actions";
@@ -14,6 +16,7 @@ export default async function SetPage({
     params: Promise<{ id: string }>
 }) {
     const t = await getTranslations("SetPage");
+    const locale = await getLocale();
     const { id } = await params;
     const session = await auth();
     const set = await getSetByID(id);
@@ -37,6 +40,10 @@ export default async function SetPage({
                     <p className="gray text-xl">
                         {set.description}
                     </p>
+                    <div className="flex flex-wrap gap-3">
+                        <p className="text-md rounded-full bg-card p-2 px-3 size-fit">{t(set.isPublic ? "public" : "private")}</p>
+                        <p className="text-md rounded-full bg-card p-2 px-3 size-fit">{formatRelativeTime(new Date(set.createdAt), locale)}</p>
+                    </div>
                 </div>
                 {isAuthor ?
                     <div className="flex gap-5">
@@ -51,6 +58,18 @@ export default async function SetPage({
                         </button>
                     </div> :
                     <></>}
+            </div>
+
+            <div className="flex flex-wrap gap-5 items-center w-full">
+                <div className="size-fit rounded-full overflow-hidden">
+                    <Image
+                        src={set.user.image}
+                        width={40}
+                        height={40}
+                        alt="profile picture" />
+                </div>
+                <p className="font-bold">{set.user.name}</p>
+
             </div>
 
             <div className="flex flex-col">

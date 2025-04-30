@@ -15,6 +15,7 @@ export async function GET(
                 title: sets.title,
                 description: sets.description,
                 isPublic: sets.isPublic,
+                createdAt: sets.createdAt,
                 user: {
                     id: users.id,
                     name: users.name,
