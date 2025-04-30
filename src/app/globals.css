@@ -128,8 +128,12 @@
     @apply rounded-full p-2 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90
   }
 
+  .outline {
+    @apply rounded-full p-2 shadow-xs hover:bg-foreground/20 bg-card outline-foreground/30
+  }
+
   .form {
-    @apply flex flex-col gap-7
+    @apply flex flex-col gap-7 p-10
   }
 
   .input {
@@ -147,6 +151,18 @@
   .card {
     @apply rounded-4xl bg-card p-10
   }
+
+  .error {
+    @apply text-destructive
+  }
+
+  .field {
+    @apply flex flex-col gap-2
+  }
+
+  /* .trans {
+    @apply transition
+  } */
 }
 
 @layer base {

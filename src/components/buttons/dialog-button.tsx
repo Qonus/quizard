@@ -12,8 +12,7 @@ export default function DialogButton({ children, ...props }: ResponsiveDialogPro
                     scale: 1.1
                 }}
                 whileTap={{
-                    scale: 0.9,
-                    rotate: -5
+                    scale: 0.9
                 }}
             >
                 {children}

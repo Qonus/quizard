@@ -1,4 +1,12 @@
 {
+    "Home": {
+        "sets": "Flashcard sets",
+        "public": "Public",
+        "private": "Private"
+    },
+    "SetPage": {
+        "cards": "Cards in this set"
+    },
     "SignInForm": {
         "trigger": "Sign In",
         "title": "Welcome to Quizard!",
@@ -6,6 +14,9 @@
         "with": "Sign in with"
     },
     "EditSetForm": {
+        "header": "Create a new Flashcard Set",
+        "public": "Public",
+        "private": "Private",
         "title": {
             "placeholder": "Enter Title of the flashcard set",
             "min": "Title is required",
@@ -15,10 +26,29 @@
             "placeholder": "Add description",
             "max": "Description can't be longer than 256 characters"
         },
+        "cards": {
+            "header": "Flashcards",
+            "number": "Card number",
+            "front": {
+                "label": "Front",
+                "min": "Front is Required",
+                "max": "Front can't be longer than 128 characters",
+                "placeholder": "Enter front"
+            },
+            "back": {
+                "label": "Back",
+                "min": "Back is Required",
+                "max": "Front can't be longer than 128 characters",
+                "placeholder": "Enter back"
+            },
+            "add": "Add Card"
+        },
         "server": "Failed to create a set, try again later..."
     },
     "NotFound": {
         "title": "404 - Page not found",
         "description": "The page you're looking for does not exist."
-    }
+    },
+    "logout": "Logout",
+    "theme": "Theme"
 }

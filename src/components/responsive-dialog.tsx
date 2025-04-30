@@ -46,7 +46,7 @@ export function ResponsiveDialog({ title, description, children, content }: Resp
                 {children}
             </SheetTrigger>
             <SheetContent side="top">
-                <div className="p-5 pb-10 w-full max-w-100 m-auto">
+                <div className="p-2 pb-10 w-full max-w-100 m-auto">
                     <SheetHeader className="text-left">
                         <SheetTitle>{title}</SheetTitle>
                         <SheetDescription>

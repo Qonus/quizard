@@ -5,36 +5,43 @@ import {
     primaryKey,
     text,
     timestamp,
-    varchar,
+    varchar
 } from "drizzle-orm/pg-core"
 import type { AdapterAccountType } from "next-auth/adapters"
 
 export const sets = pgTable("set", {
-    id: text("id")
+    id: text()
         .primaryKey()
         .$defaultFn(() => crypto.randomUUID()),
-    title: varchar("title", { length: 128 }).notNull(),
-    description: varchar("description", { length: 256 }),
-    createdAt: timestamp("createdAt", { mode: "date" }).defaultNow()
+    title: varchar({ length: 128 }).notNull(),
+    userId: text().notNull().references(() => users.id, { onDelete: "cascade" }),
+    description: varchar({ length: 256 }),
+    isPublic: boolean().default(false),
+    createdAt: timestamp({ mode: "date" }).defaultNow()
 })
 
 export const cards = pgTable("card", {
-    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
-    setId: text("id").notNull().references(() => sets.id, { onDelete: "cascade" }),
-    term: varchar("term", { length: 128 }).notNull(),
-    definition: varchar("definition", { length: 128 }).notNull(),
-    image: text("image")
+    id: text().primaryKey().$defaultFn(() => crypto.randomUUID()),
+    setId: text().notNull().references(() => sets.id, { onDelete: "cascade" }),
+    front: varchar({ length: 128 }).notNull(),
+    back: varchar({ length: 128 }).notNull(),
+    image: text()
 })
 
 export const users = pgTable("user", {
-    id: text("id")
-        .primaryKey()
-        .$defaultFn(() => crypto.randomUUID()),
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
     name: text("name"),
     username: text("username").unique(),
     email: text("email").unique(),
     emailVerified: timestamp("emailVerified", { mode: "date" }),
     image: text("image"),
+})
+
+export const recents = pgTable("recent", {
+    id: text("id").primaryKey().$defaultFn(() => crypto.randomUUID()),
+    userId: text("userId").notNull().references(() => users.id, { onDelete: "cascade" }),
+    setId: text("setId").notNull().references(() => sets.id, { onDelete: "cascade" }),
+    lastOpened: timestamp("last_opened").defaultNow(),
 })
 
 export const accounts = pgTable(
