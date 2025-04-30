@@ -4,6 +4,7 @@ import { LogOut } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 import CreateSetButton from "./buttons/create-set-button";
+import LocaleSwitcher from "./buttons/locale-switcher";
 import { Logo } from "./buttons/logo-button";
 import SignInButton from "./buttons/sign-in-button";
 import ThemeSwitcher from "./buttons/theme-switcher";
@@ -29,12 +30,14 @@ export default async function Navbar() {
                                         alt="profile picture" />
                                 </button>
                             </DropdownMenuTrigger>
-                            <DropdownMenuContent side="left" className="w-56">
+                            <DropdownMenuContent side="bottom" className="m-5">
                                 <DropdownMenuLabel className="font-bold text-lg">{session.user?.name}</DropdownMenuLabel>
                                 <DropdownMenuSeparator />
                                 <DropdownMenuGroup>
                                     <ThemeSwitcher />
                                 </DropdownMenuGroup>
+                                <DropdownMenuSeparator />
+                                <LocaleSwitcher />
                                 <DropdownMenuSeparator />
                                 <DropdownMenuItem onClick={submitLogout}>
                                     <LogOut />

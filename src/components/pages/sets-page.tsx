@@ -24,9 +24,9 @@ export default async function SetsPage() {
                         className="text-xl">
                         {t("public")}
                     </TabsTrigger>
-                    <TabsTrigger value="private"
+                    <TabsTrigger value="your"
                         className={cn("text-xl", session ? "" : "hidden")}>
-                        {t("private")}
+                        {t("your")}
                     </TabsTrigger>
                 </TabsList>
                 <TabsContent value="public" className="flex flex-col gap-5 py-10">
@@ -35,7 +35,7 @@ export default async function SetsPage() {
                     ))}
                 </TabsContent>
                 {session ?
-                    <TabsContent value="private" className="flex flex-col gap-5 py-10">
+                    <TabsContent value="your" className="flex flex-col gap-5 py-10">
                         {userSets.map((set: ISet, index: number) => (
                             <SetCard key={index} set={set} />
                         ))}

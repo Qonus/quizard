@@ -2,7 +2,7 @@
     "Home": {
         "sets": "Flashcard sets",
         "public": "Public",
-        "private": "Private",
+        "your": "Your sets",
         "cards": "Cards"
     },
     "SetPage": {
@@ -24,10 +24,13 @@
         "trigger": "Sign In",
         "title": "Welcome to Quizard!",
         "description": "This is a Sign In Form:",
-        "with": "Sign in with"
+        "with": "Sign in with {service}"
     },
     "EditSetForm": {
-        "header": "Create a new Flashcard Set",
+        "header": {
+            "create": "Create a new Flashcard Set",
+            "edit": "Edit the Flashcard Set"
+        },
         "public": "Public",
         "private": "Private",
         "title": {

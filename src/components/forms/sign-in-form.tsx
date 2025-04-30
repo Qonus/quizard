@@ -13,7 +13,7 @@ export default function SignInForm() {
                 whileTap={{ scale: 0.95 }}
                 type="submit"
                 className="py-2 px-4 rounded-full default font-bold">
-                {t("with")} Google
+                {t("with", { service: "Google" })}
             </motion.button>
         </form>
     );

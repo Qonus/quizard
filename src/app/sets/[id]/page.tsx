@@ -31,7 +31,7 @@ export default async function SetPage({
     }
 
     return (
-        <div className="w-full flex p-5 flex-col gap-10 max-w-200 m-auto">
+        <div className="w-full flex p-5 flex-col gap-10 max-w-200 m-auto mb-30">
             <div className="w-full flex justify-between sm:items-center sm:flex-row flex-col gap-10">
                 <div className="flex flex-col gap-5">
                     <h1 className="title text-2xl">

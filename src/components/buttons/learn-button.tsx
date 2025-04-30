@@ -10,7 +10,7 @@ export default function LearnButton({ href, className }: { href: string, classNa
         <motion.a
             href={href}
             whileTap={{ scale: 0.9 }}
-            className={cn("default rounded-xl size-fit text-lg py-3 px-10", className)}
+            className={cn("default rounded-xl size-fit text-lg py-3 px-10 font-bold", className)}
         >
             {t("learn")}
         </motion.a>

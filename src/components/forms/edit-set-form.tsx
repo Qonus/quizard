@@ -56,7 +56,7 @@ export default function EditSetForm({
     return (
         <form onSubmit={f.handleSubmit(OnSubmit)} className="form p-4 max-w-200 m-auto pb-0">
             <div className="flex sm:justify-between sm:flex-row flex-col gap-5">
-                <h1 className="title">{t("header")}</h1>
+                <h1 className="title">{t("header." + (defaultValues.id ? "edit" : "create"))}</h1>
                 <button
                     type="button"
                     onClick={() => f.setValue("isPublic", !f.watch("isPublic"))}
