@@ -1,15 +1,15 @@
 # 🔮 Quizard  
 ### *Learn like a wizard—cast spells on forgetfulness!*  
 
-## 🌟 **Why Quizard?**  
-Turn study sessions into magical quests with:  
-- **AI-Generated Decks** – Brew custom flashcards in the "Cauldron Generator"  
-- **Wizard-Themed UI** – Animated spells track your progress  
-- **Smart Recall** – Adaptive quizzes that strengthen weak spots  
+## Features
+- API
+- Using other people's flashcard sets for learning
+- Creating and Sharing your own flashcard sets
 
 ## Getting Started
 
-First, run the development server:
+1. Setup .env file, for reference look at [this](https://github.com/Qonus/quizard/blob/main/.example-env) example.
+2. Run the development server:
 
 ```bash
 npm run dev
@@ -21,4 +21,4 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
