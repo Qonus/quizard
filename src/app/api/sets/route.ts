@@ -50,7 +50,7 @@ export async function POST(request: Request) {
 
     try {
         const session = await auth();
-        let [newSet] = await db.insert(sets).values({
+        const [newSet] = await db.insert(sets).values({
             title: body.title,
             description: body.description,
             isPublic: body.isPublic,
