@@ -65,5 +65,6 @@
         "description": "The page you're looking for does not exist."
     },
     "logout": "Logout",
-    "theme": "Theme"
+    "theme": "Theme",
+    "loading": "Fetching Data..."
 }

@@ -13,7 +13,7 @@ export default async function Navbar() {
     const session = await auth();
     const t = await getTranslations();
     return (
-        <div className="sticky top-0 left-0 w-full">
+        <div className="z-50 sticky top-0 left-0 w-full">
             <div className="container p-5 flex justify-between gap-3">
                 <Logo />
                 {session ?
