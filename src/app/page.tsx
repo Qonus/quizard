@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getSets } from "./sets/page";
+import { getSets } from "./sets/actions";
 
 export default async function Home() {
   const session = await auth();

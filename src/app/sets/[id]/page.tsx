@@ -1,25 +1,12 @@
 import { ICard } from "@/components/types/tables";
 import { auth } from "@/lib/auth";
-import { cn, getBaseUrl } from "@/lib/utils";
-import axios from "axios";
+import { cn } from "@/lib/utils";
 import { Edit, Trash } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
+import { deleteSet, getSetByID } from "../actions";
 
-export async function getSetByID(id: string) {
-    try {
-        const res = await axios.get(`${getBaseUrl()}/api/sets/${id}`);
-        return res.data;
-    } catch {
-        return null;
-    }
-}
-
-async function deleteSet(id: string) {
-    const res = await axios.delete(`${getBaseUrl()}/api/sets/${id}`);
-    return res.data;
-}
 
 export default async function SetPage({
     params

@@ -1,20 +1,11 @@
 import { ISet } from "@/components/types/tables";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { auth } from "@/lib/auth";
-import { cn, getBaseUrl } from "@/lib/utils";
-import axios from "axios";
+import { cn } from "@/lib/utils";
 import { getTranslations } from "next-intl/server";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-
-export async function getSets(userId?: string) {
-    try {
-        const sets = await axios.get(`${getBaseUrl()}/api/sets?${userId && `userid=${userId}`}`);
-        return sets.data;
-    } catch {
-        return null;
-    }
-}
+import { getSets } from "./actions";
 
 export default async function Sets() {
     const session = await auth();

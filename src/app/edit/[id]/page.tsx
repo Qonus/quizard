@@ -1,4 +1,4 @@
-import { getSetByID } from "@/app/sets/[id]/page";
+import { getSetByID } from "@/app/sets/actions";
 import EditSetForm from "@/components/forms/edit-set-form";
 import { notFound } from "next/navigation";
 
