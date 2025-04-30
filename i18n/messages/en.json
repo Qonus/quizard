@@ -2,6 +2,7 @@
     "Home": {
         "sets": "Flashcard sets",
         "public": "Public",
+        "private": "Private",
         "your": "Your sets",
         "cards": "Cards"
     },

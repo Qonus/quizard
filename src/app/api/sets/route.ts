@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import { and, count, eq } from "drizzle-orm";
+import { and, count, desc, eq } from "drizzle-orm";
 import db from "../../../../db";
 import { cards, sets, users } from "../../../../db/schema";
 
@@ -30,7 +30,7 @@ export async function GET(
             .leftJoin(cards, eq(cards.setId, sets.id))
             .where(and(
                 userid ? eq(sets.userId, userid) : eq(sets.isPublic, true)
-            )).groupBy(sets.id, users.id);
+            )).groupBy(sets.id, users.id).orderBy(desc(sets.createdAt));
 
         return new Response(JSON.stringify(res), {
             status: 201,
