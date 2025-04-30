@@ -2,10 +2,21 @@
     "Home": {
         "sets": "Flashcard sets",
         "public": "Public",
-        "private": "Private"
+        "private": "Private",
+        "cards": "Cards"
     },
     "SetPage": {
-        "cards": "Cards in this set"
+        "cards": "Cards in this set",
+        "learn": "Learn",
+        "min": "You need at least 4 cards to learn"
+    },
+    "LearnPage": {
+        "question": "Question number",
+        "results": "Results",
+        "correct": "Correct",
+        "wrong": "Wrong",
+        "answer": "Your Answer",
+        "done": "Return"
     },
     "SignInForm": {
         "trigger": "Sign In",
@@ -43,7 +54,9 @@
             },
             "add": "Add Card"
         },
-        "server": "Failed to create a set, try again later..."
+        "server": "Failed to create a set, try again later...",
+        "create": "Create",
+        "edit": "Edit"
     },
     "NotFound": {
         "title": "404 - Page not found",

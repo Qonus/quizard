@@ -7,7 +7,7 @@ export interface ISet {
     description: string | undefined,
     isPublic: boolean,
     user: IUser,
-    cards: ICard[]
+    cards: ICard[] | number
 }
 
 export type IUser = InferSelectModel<typeof users>;

@@ -1,5 +1,5 @@
 import { auth } from "@/lib/auth";
-import { and, eq } from "drizzle-orm";
+import { and, count, eq } from "drizzle-orm";
 import db from "../../../../db";
 import { cards, sets, users } from "../../../../db/schema";
 
@@ -19,14 +19,17 @@ export async function GET(
                     id: users.id,
                     name: users.name,
                     email: users.email,
-                    username: users.username
-                }
+                    username: users.username,
+                    image: users.image
+                },
+                cards: count(cards.id)
             })
             .from(sets)
             .leftJoin(users, eq(sets.userId, users.id))
+            .leftJoin(cards, eq(cards.setId, sets.id))
             .where(and(
                 userid ? eq(sets.userId, userid) : eq(sets.isPublic, true)
-            ));
+            )).groupBy(sets.id, users.id);
 
         return new Response(JSON.stringify(res), {
             status: 201,
@@ -44,12 +47,15 @@ export async function GET(
     }
 }
 
-
 export async function POST(request: Request) {
     const body = await request.json();
 
     try {
         const session = await auth();
+        if (!session?.user?.id) {
+            return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
+        }
+
         const [newSet] = await db.insert(sets).values({
             title: body.title,
             description: body.description,

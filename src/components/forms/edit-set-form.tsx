@@ -9,12 +9,14 @@ import { useRouter } from "next/navigation";
 import { useFieldArray, useForm } from "react-hook-form";
 import TextareaAutosize from 'react-textarea-autosize';
 import z from "zod";
+import BackButton from "../buttons/back-button";
 import { SetSchema } from "../types/schemas";
 
 type FormData = z.infer<typeof SetSchema>;
 
 export default function EditSetForm({
     defaultValues = {
+        id: undefined,
         title: "",
         description: "",
         isPublic: false,
@@ -36,7 +38,12 @@ export default function EditSetForm({
 
     const OnSubmit = async (data: FormData) => {
         try {
-            const newSet = await axios.post(`/api/sets`, data);
+            let newSet;
+            if (defaultValues.id) {
+                newSet = await axios.put(`/api/sets/${defaultValues.id}`, data);
+            } else {
+                newSet = await axios.post(`/api/sets`, data);
+            }
             router.push(`/sets/${newSet.data.id}`);
         } catch {
             f.setError("description", {
@@ -142,12 +149,13 @@ export default function EditSetForm({
                     {t("cards.add")}
                 </motion.button>
             </div>
-            <div className="sticky bottom-0 bg-background p-4">
+            <div className="sticky bottom-0 bg-linear-to-t from-background via-background via-30% to-transparent p-4 flex justify-between items-center">
+                <BackButton />
                 <motion.button
                     whileTap={{ scale: 0.95 }}
                     type="submit"
-                    className="default float-end py-4 px-20 text-lg font-bold">
-                    Create
+                    className="default py-4 px-15 text-lg font-bold">
+                    {t(defaultValues.title ? "edit" : "create")}
                 </motion.button>
             </div>
         </form>

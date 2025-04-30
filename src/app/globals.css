@@ -121,15 +121,15 @@
 
 @layer components {
   .ghost {
-    @apply rounded-full p-2 hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50
+    @apply cursor-pointer rounded-full p-2 hover:bg-accent hover:text-accent-foreground dark:hover:bg-accent/50
   }
 
   .default {
-    @apply rounded-full p-2 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90
+    @apply cursor-pointer rounded-full p-2 bg-primary text-primary-foreground shadow-xs hover:bg-primary/90
   }
 
   .outline {
-    @apply rounded-full p-2 shadow-xs hover:bg-foreground/20 bg-card outline-foreground/30
+    @apply cursor-pointer rounded-full p-2 shadow-xs hover:bg-foreground/20 bg-card outline-foreground/30
   }
 
   .form {
@@ -137,7 +137,7 @@
   }
 
   .input {
-    @apply px-4 py-2 focus:outline-solid focus:outline-2 focus:text-foreground/70 rounded-xl outline-primary/20 outline-none bg-card focus:bg-transparent transition-all duration-200 resize-none field-sizing-content
+    @apply px-4 py-2 focus:outline-solid focus:outline-2 rounded-xl outline-primary/20 outline-none bg-card focus:bg-transparent transition-all duration-200 resize-none field-sizing-content
   }
 
   .title {
@@ -149,7 +149,7 @@
   }
 
   .card {
-    @apply rounded-4xl bg-card p-10
+    @apply rounded-xl bg-card p-10
   }
 
   .error {
