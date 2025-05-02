@@ -160,9 +160,9 @@
     @apply flex flex-col gap-2
   }
 
-  /* .trans {
-    @apply transition
-  } */
+  .glow {
+    box-shadow: 0 0 50px 10px rgba(0, 0, 0, 0.25)
+  }
 }
 
 @layer base {

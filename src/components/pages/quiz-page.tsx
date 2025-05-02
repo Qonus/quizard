@@ -79,7 +79,7 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
         <div className="w-full">
             <div className="sticky max-w-200 m-auto top-0 bg-background p-4 pt-20 w-full text-2xl flex gap-5 items-center">
                 <BackButton />
-                <h1 className="font-bold">{t("question")} {current + 1}</h1>
+                <h1 className="font-bold">{t("question")} {current + 1}/{quiz.length}</h1>
             </div>
             {/* {answers.map((ans, i) => <p key={i}>{i} {ans}</p>)} */}
             <div className="flex flex-col gap-10 p-5">
@@ -112,11 +112,11 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
             </div>
             <div className="sticky max-w-200 m-auto bottom-0 w-full text-2xl flex justify-between p-5">
                 <button onClick={prev}
-                    className={cn("outline", current === 0 ? "brightness-40" : "")}>
+                    className={cn("outline", current === 0 ? "dark:brightness-40" : "")}>
                     <ArrowLeft className="size-7" />
                 </button>
                 <button onClick={next}
-                    className={cn("outline", current === quiz.length - 1 ? "brightness-40" : "")}>
+                    className={cn("outline", current === quiz.length - 1 ? "dark:brightness-40" : "")}>
                     <ArrowRight className="size-7" />
                 </button>
             </div>
