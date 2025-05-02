@@ -9,8 +9,9 @@
         "cards": "Cards"
     },
     "SetPage": {
-        "cards": "Cards in this set",
+        "review": "Review Cards",
         "learn": "Learn",
+        "cards": "Cards in this set",
         "min": "You need at least 4 cards to learn",
         "public": "Public",
         "private": "Private"
