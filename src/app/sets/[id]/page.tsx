@@ -73,7 +73,7 @@ export default async function SetPage({
             </div>
 
             <div className="flex flex-col">
-                <LearnButton href={`/learn/${id}`} className={set.cards.length < 4 ? "bg-accent brightness-50 cursor-auto mb-3" : ""} />
+                <LearnButton href={set.cards.length < 4 ? "#" : `/learn/${id}`} className={set.cards.length < 4 ? "dark:bg-accent bg-muted text-muted-foreground brightness-90 dark:brightness-50 mb-3" : ""} />
                 {set.cards.length < 4 ? <p className="gray">{t("min")}</p> : <></>}
             </div>
 
