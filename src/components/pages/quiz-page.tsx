@@ -43,8 +43,8 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
         }, 0);
 
         return (
-            <div className="max-w-xl mx-auto mb-30">
-                <div className="flex justify-between mb-10 sticky top-0 p-4 pt-10 bg-background">
+            <div className="max-w-xl mx-auto mb-30 p-4">
+                <div className="flex justify-between mb-10 sticky top-0 p-4 pt-20 bg-background">
                     <h1 className="text-2xl font-bold">{t("results")}</h1>
                     <p className="text-2xl font-bold">{correctCount}/{quiz.length}</p>
                 </div>
