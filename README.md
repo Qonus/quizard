@@ -7,7 +7,7 @@
 
 ## Features
 - API
-- Using other people's flashcard sets for learning
+- Using other people's flashcard sets for learning and reviewing
 - Creating and Sharing your own flashcard sets
 
 ## Getting Started
