@@ -2,10 +2,15 @@
 
 import { getBaseUrl } from "@/lib/server-utils";
 import axios from "axios";
+import { cookies } from "next/headers";
 
 export async function getSetByID(id: string) {
     try {
-        const res = await axios.get(`${await getBaseUrl()}/api/sets/${id}`);
+        const res = await axios.get(`${await getBaseUrl()}/api/sets/${id}`, {
+            headers: {
+                Cookies: (await cookies()).toString()
+            }
+        });
         return res.data;
     } catch (e) {
         console.log(e);
@@ -14,13 +19,21 @@ export async function getSetByID(id: string) {
 }
 
 export async function deleteSet(id: string) {
-    const res = await axios.delete(`${await getBaseUrl()}/api/sets/${id}`);
+    const res = await axios.delete(`${await getBaseUrl()}/api/sets/${id}`, {
+        headers: {
+            Cookies: (await cookies()).toString()
+        }
+    });
     return res.data;
 }
 
 export async function getSets(userId?: string) {
     try {
-        const sets = await axios.get(`${await getBaseUrl()}/api/sets?${userId && `userid=${userId}`}`);
+        const sets = await axios.get(`${await getBaseUrl()}/api/sets?${userId && `userid=${userId}`}`, {
+            headers: {
+                Cookies: (await cookies()).toString()
+            }
+        });
         return sets.data;
     } catch (e) {
         console.log(e);
