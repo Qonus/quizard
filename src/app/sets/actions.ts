@@ -1,6 +1,6 @@
 "use server";
 
-import { getBaseUrl } from "@/lib/utils";
+import { getBaseUrl } from "@/lib/server-utils";
 import axios from "axios";
 
 export async function getSetByID(id: string) {
