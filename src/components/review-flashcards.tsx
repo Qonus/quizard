@@ -27,18 +27,17 @@ export default function ReviewFlashcards({
         enter: {
             originZ: 300,
             rotateY: direction * -90,
-            opacity: 0.2
+            opacity: 0
         },
         center: {
             opacity: 1,
             originZ: 0,
             rotateY: 0,
-            rotateX: isFront ? 0 : -180,
         },
         exit: (dir: number) => ({
             originZ: 300,
             rotateY: dir * 90,
-            opacity: 0.2,
+            opacity: 0,
             transition: { duration: 0.1 }
         })
     };
@@ -58,25 +57,30 @@ export default function ReviewFlashcards({
                         animate="center"
                         exit="exit"
                         transition={{ duration: 0.5, type: "spring" }}
-                        className={`relative bg-card rounded-3xl glow h-70 max-w-140 text-[clamp(1.5rem,5cqw,2rem)] leadintg-tight cursor-pointer m-auto w-full transform-3d`}
+                        className={`h-70 max-w-140 cursor-pointer m-auto w-full transform-3d`}
                         onClick={() => {
                             setIsFront(!isFront);
                         }}
                     >
-                        <div
-                            className="size-full p-7 flex absolute backface-hidden rotate-y-0"
+                        <motion.div
+                            className="relative bg-card size-full rounded-3xl glow text-[clamp(1.3rem,5cqw,2rem)] leadintg-tight transform-3d"
+                            animate={{ rotateX: isFront ? 0 : -180 }}
                         >
-                            <p className="m-auto">
-                                {cards[current].front}
-                            </p>
-                        </div>
-                        <div
-                            className="size-full p-7 flex absolute backface-hidden [transform:rotateX(180deg)]"
-                        >
-                            <p className="m-auto">
-                                {cards[current].back}
-                            </p>
-                        </div>
+                            <div
+                                className="size-full p-7 flex absolute backface-hidden rotate-y-0"
+                            >
+                                <p className="m-auto">
+                                    {cards[current].front}
+                                </p>
+                            </div>
+                            <div
+                                className="size-full p-7 flex absolute backface-hidden [transform:rotateX(180deg)]"
+                            >
+                                <p className="m-auto">
+                                    {cards[current].back}
+                                </p>
+                            </div>
+                        </motion.div>
                     </motion.div>
                 </AnimatePresence>
             </div>
