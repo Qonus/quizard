@@ -117,10 +117,6 @@
     max-width: 1000px;
     @apply m-auto
   }
-
-  .backface-hidden {
-    /* transform: translate3d(0, 0, 0) */
-  }
 }
 
 @layer components {

@@ -25,9 +25,9 @@ export default function ReviewFlashcards({
 
     const variants = {
         enter: {
-            originZ: 300,
-            rotateY: direction * -90,
-            opacity: 0
+            originZ: 200,
+            rotateY: direction * -60,
+            opacity: 0,
         },
         center: {
             opacity: 1,
@@ -35,8 +35,8 @@ export default function ReviewFlashcards({
             rotateY: 0,
         },
         exit: (dir: number) => ({
-            originZ: 300,
-            rotateY: dir * 90,
+            originZ: 200,
+            rotateY: dir * 60,
             opacity: 0,
             transition: { duration: 0.1 }
         })
@@ -86,11 +86,11 @@ export default function ReviewFlashcards({
             </div>
             <div className="sticky max-w-200 m-auto bottom-0 w-full text-2xl flex justify-between p-5">
                 <button onClick={() => nav(-1)}
-                    className={cn("outline", current === 0 ? "dark:brightness-40" : "")}>
+                    className={cn("outline")}>
                     <ArrowLeft className="size-7" />
                 </button>
                 <button onClick={() => nav(1)}
-                    className={cn("outline", current === cards.length - 1 ? "bg-muted dark:brightness-40" : "")}>
+                    className={cn("outline")}>
                     <ArrowRight className="size-7" />
                 </button>
             </div>
