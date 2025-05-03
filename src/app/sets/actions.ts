@@ -7,7 +7,8 @@ export async function getSetByID(id: string) {
     try {
         const res = await axios.get(`${await getBaseUrl()}/api/sets/${id}`);
         return res.data;
-    } catch {
+    } catch (e) {
+        console.log(e);
         return null;
     }
 }
@@ -21,7 +22,8 @@ export async function getSets(userId?: string) {
     try {
         const sets = await axios.get(`${await getBaseUrl()}/api/sets?${userId && `userid=${userId}`}`);
         return sets.data;
-    } catch {
+    } catch (e) {
+        console.log(e);
         return null;
     }
 }
