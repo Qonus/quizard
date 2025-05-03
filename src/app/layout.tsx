@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 import type { Metadata } from "next";
 import { NextIntlClientProvider } from 'next-intl';
@@ -39,6 +40,7 @@ export default async function RootLayout({
             <div className="container">
               {children}
             </div>
+            <Footer />
           </ThemeProvider>
         </NextIntlClientProvider>
       </body>

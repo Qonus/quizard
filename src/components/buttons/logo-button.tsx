@@ -2,7 +2,7 @@
 
 import { motion, useAnimation } from "motion/react";
 import { useRouter } from "next/navigation";
-import { Icons } from '../icons/icons';
+import Quizard from "../icons/quizard";
 
 export function Logo() {
     const router = useRouter();
@@ -25,7 +25,7 @@ export function Logo() {
             onClick={() => router.push("/")}
         >
             {/* {theme === 'light' ? <Sun /> : <Moon />} */}
-            <Icons.logo />
+            <Quizard />
             <motion.div
                 key="modal"
                 initial={{ width: 0 }}

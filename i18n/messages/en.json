@@ -71,6 +71,9 @@
         "title": "404 - Page not found",
         "description": "The page you're looking for does not exist."
     },
+    "Footer": {
+        "follow": "Follow this project on"
+    },
     "logout": "Logout",
     "theme": "Theme",
     "loading": "Fetching Data..."

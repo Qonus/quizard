@@ -27,7 +27,5 @@ export async function getBaseUrl() {
     const host = headersList.get('host');
     const protocol = headersList.get('x-forwarded-proto') || 'http';
     const baseUrl = `${protocol}://${host}`;
-
-    console.log(baseUrl);
     return baseUrl;
 }
