@@ -1,9 +1,8 @@
 # 🔮 Quizard  
 ### *Learn like a wizard—cast spells on forgetfulness!*  
 
-<img src="https://github.com/user-attachments/assets/977a56fa-ccc5-4d9f-a8a1-811f08f7df94" />
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/c7087a47-efd5-4962-9e17-3ddd2d068300" />
+  <img src="https://github.com/user-attachments/assets/c7087a47-efd5-4962-9e17-3ddd2d068300" width="300" />
 </p>
 
 ## Features
