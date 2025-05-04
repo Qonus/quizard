@@ -31,7 +31,7 @@
         "with": "Sign in with {service}"
     },
     "GenerateSetForm": {
-        "title": "Modify your Flashcard set:",
+        "title": "Modify your Flashcard Set with AI:",
         "prompt": {
             "placeholder": "Enter your prompt...",
             "min": "Prompt is required"

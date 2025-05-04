@@ -6,9 +6,10 @@
 </p>
 
 ## Features
-- API
-- Using other people's flashcard sets for learning and reviewing
 - Creating and Sharing your own flashcard sets
+- ✨AI companion to help you refine your flashcards
+- Using other people's flashcard sets for learning and reviewing
+- API
 
 ## Getting Started
 

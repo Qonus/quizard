@@ -3,13 +3,13 @@ import axios from "axios";
 export async function POST(request: Request) {
     const body = await request.json();
     const systemMessage = `
-    Modify user's flashcard set.
+    Modify user's flashcard set, or create/remake it depending on request and current set.
 
-    Here is user's flashcard set: ${JSON.stringify(body.set)}
+    Here is user's current flashcard set: ${JSON.stringify(body.set)}
     
     Here are your rules:
 
-    - Set should be modified based on this prompt or populated to theme described in it if the set is empty: {
+    - Generate a flashcard set based on user's prompt: {
         "${body.prompt}"
     }
 

@@ -70,7 +70,6 @@ export default async function SetPage({
                         alt="profile picture" />
                 </div>
                 <p className="font-bold">{set.user.name}</p>
-
             </div>
 
             <h1 className="title text-2xl">{t("review")}:</h1>
