@@ -67,16 +67,16 @@ export default function ReviewFlashcards({
                             animate={{ rotateX: isFront ? 0 : -180 }}
                         >
                             <div
-                                className="size-full p-7 flex absolute backface-hidden rotate-y-0"
+                                className="size-full p-7 flex absolute backface-hidden rotate-y-0 overflow-y-scroll"
                             >
-                                <p className="m-auto">
+                                <p className="m-auto whitespace-pre-line">
                                     {cards[current].front}
                                 </p>
                             </div>
                             <div
-                                className="size-full p-7 flex absolute backface-hidden [transform:rotateX(180deg)]"
+                                className="size-full p-7 flex absolute backface-hidden [transform:rotateX(180deg)] overflow-y-scroll"
                             >
-                                <p className="m-auto">
+                                <p className="m-auto whitespace-pre-line">
                                     {cards[current].back}
                                 </p>
                             </div>

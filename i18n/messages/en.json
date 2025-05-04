@@ -30,6 +30,16 @@
         "description": "This is a Sign In Form:",
         "with": "Sign in with {service}"
     },
+    "GenerateSetForm": {
+        "title": "Modify your Flashcard set:",
+        "prompt": {
+            "placeholder": "Enter your prompt...",
+            "min": "Prompt is required"
+        },
+        "server": "Failed to modify a set",
+        "submit": "Modify",
+        "loading": "Modifying..."
+    },
     "EditSetForm": {
         "header": {
             "create": "Create a new Flashcard Set",

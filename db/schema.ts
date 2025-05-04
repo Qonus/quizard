@@ -13,9 +13,9 @@ export const sets = pgTable("set", {
     id: text()
         .primaryKey()
         .$defaultFn(() => crypto.randomUUID()),
-    title: varchar({ length: 128 }).notNull(),
+    title: varchar({ length: 256 }).notNull(),
     userId: text().notNull().references(() => users.id, { onDelete: "cascade" }),
-    description: varchar({ length: 256 }),
+    description: varchar({ length: 1024 }),
     isPublic: boolean().default(false),
     createdAt: timestamp({ mode: "date" }).defaultNow()
 })
@@ -23,8 +23,8 @@ export const sets = pgTable("set", {
 export const cards = pgTable("card", {
     id: text().primaryKey().$defaultFn(() => crypto.randomUUID()),
     setId: text().notNull().references(() => sets.id, { onDelete: "cascade" }),
-    front: varchar({ length: 128 }).notNull(),
-    back: varchar({ length: 128 }).notNull(),
+    front: varchar({ length: 1024 }).notNull(),
+    back: varchar({ length: 1024 }).notNull(),
     image: text()
 })
 

@@ -38,7 +38,7 @@ export default async function SetPage({
                     <h1 className="title text-2xl">
                         {set.title}
                     </h1>
-                    <p className="gray text-xl">
+                    <p className="gray text-xl whitespace-pre-line">
                         {set.description}
                     </p>
                     <div className="flex flex-wrap gap-3">

@@ -133,7 +133,7 @@
   }
 
   .form {
-    @apply flex flex-col gap-7 p-10
+    @apply flex flex-col gap-7 p-10 w-full
   }
 
   .input {

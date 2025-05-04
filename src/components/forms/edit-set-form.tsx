@@ -11,6 +11,7 @@ import TextareaAutosize from 'react-textarea-autosize';
 import z from "zod";
 import BackButton from "../buttons/back-button";
 import { SetSchema } from "../types/schemas";
+import GenerateSetForm from "./generate-set-form";
 
 type FormData = z.infer<typeof SetSchema>;
 
@@ -21,7 +22,7 @@ export default function EditSetForm({
         description: "",
         isPublic: false,
         cards: Array(5).fill({ front: "", back: "" }),
-    } }) {
+    }}) {
     const t = useTranslations("EditSetForm");
     const router = useRouter();
 
@@ -54,25 +55,9 @@ export default function EditSetForm({
     }
 
     return (
-        <>
-            {/* {defaultValues.id ? <></> :
-                <form>
-                    <TextareaAutosize
-                        maxRows={10}
-                        placeholder={t("description.placeholder")}
-                        {...f.register("description")}
-                        className="input"
-                        autoComplete="off"
-                    />
-                    <motion.button
-                        whileTap={{ scale: 0.95 }}
-                        type="submit"
-                        className="default py-4 px-15 text-lg font-bold">
-                        {t(defaultValues.title ? "edit" : "create")}
-                    </motion.button>
-                </form>
-            } */}
-            <form onSubmit={f.handleSubmit(OnSubmit)} className="form p-4 max-w-200 m-auto pb-0">
+        <div className="flex flex-col gap-10">
+            <GenerateSetForm form={f} cards={card} />
+            <form onSubmit={f.handleSubmit(OnSubmit)} className="form p-4 max-w-180 m-auto pb-0">
                 <div className="flex sm:justify-between sm:flex-row flex-col gap-5">
                     <h1 className="title">{t("header." + (defaultValues.id ? "edit" : "create"))}</h1>
                     <button
@@ -81,7 +66,6 @@ export default function EditSetForm({
                         className="outline w-fit px-5">
                         {t(f.watch("isPublic") ? "public" : "private")}
                     </button>
-
                 </div>
                 <div className="field">
                     <input
@@ -114,7 +98,7 @@ export default function EditSetForm({
                 <div className="flex flex-col gap-5">
                     <h1 className="title">{t("cards.header")}</h1>
                     {card.fields.map((field, index) => (
-                        <div key={index} className="card p-7 flex flex-col gap-5">
+                        <div key={field.id} className="card p-7 flex flex-col gap-5">
                             <div className="flex justify-between">
                                 <p className="text-lg">{t("cards.number")} {index + 1}</p>
                                 {card.fields.length > 2 && (
@@ -177,6 +161,6 @@ export default function EditSetForm({
                     </motion.button>
                 </div>
             </form>
-        </>
+        </div>
     );
 }
