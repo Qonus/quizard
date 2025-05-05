@@ -22,7 +22,7 @@ export default function EditSetForm({
         description: "",
         isPublic: false,
         cards: Array(5).fill({ front: "", back: "" }),
-    }}) {
+    } }) {
     const t = useTranslations("EditSetForm");
     const router = useRouter();
 

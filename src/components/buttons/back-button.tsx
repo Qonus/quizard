@@ -8,6 +8,7 @@ export default function BackButton() {
     const router = useRouter();
     return (
         <motion.button
+            type="button"
             whileTap={{ scale: 0.95 }}
             onClick={() => router.back()}
             className="outline size-fit"
