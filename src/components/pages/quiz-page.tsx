@@ -77,7 +77,7 @@ export default function QuizPage({ quiz }: { quiz: IQuestion[] }) {
 
     return (
         <div className="w-full">
-            <div className="sticky max-w-200 m-auto top-0 bg-background p-4 pt-20 w-full text-2xl flex gap-5 items-center">
+            <div className="max-w-200 m-auto bg-background p-4 pt-20 w-full text-2xl flex gap-5 items-center">
                 <BackButton />
                 <h1 className="font-bold">{t("question")} {current + 1}/{quiz.length}</h1>
             </div>

@@ -18,6 +18,8 @@ const formSchema = z.object({
 type FormData = z.infer<typeof formSchema>;
 type SetFormData = z.infer<typeof SetSchema>;
 
+
+
 export default function GenerateSetForm({ form, cards }: {
     form: UseFormReturn<SetFormData>, cards: UseFieldArrayReturn<{
         cards: {

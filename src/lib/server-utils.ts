@@ -19,10 +19,6 @@ export async function submitLogout() {
 }
 
 export async function getBaseUrl() {
-    // const baseUrl =
-    //     process.env.NEXT_PUBLIC_URL ||
-    //     (process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000");
-    // console.log(baseUrl);
     const headersList = await headers();
     const host = headersList.get('host');
     const protocol = headersList.get('x-forwarded-proto') || 'http';
