@@ -60,6 +60,11 @@ export async function DELETE(
 ) {
     const { id } = await params;
     try {
+        const session = await auth();
+        if (!session?.user?.id) {
+            return new Response(JSON.stringify({ error: "Unauthorized" }), { status: 401 });
+        }
+
         const [set] = await db.delete(sets).where(eq(sets.id, id)).returning();
 
         return new Response(JSON.stringify(set), {
