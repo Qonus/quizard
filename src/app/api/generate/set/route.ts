@@ -33,7 +33,7 @@ export async function POST(request: Request) {
     - Your response should be JSON parsable
     `;
     try {
-        const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${proc…_KEY}`, {rateContent?key=${process.env.GEMINI_API_KEY}`, {
+        const response = await axios.post(`https://generativelanguage.googleapis.com/v1beta/models/gemini-3.1-flash-lite:generateContent?key=${process.env.GEMINI_API_KEY}`, {
             contents: [{
                 parts: [{ text: systemMessage }]
             }],
